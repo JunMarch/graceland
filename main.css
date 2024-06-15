@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+:root{
+  --main : white;
+  --accent : #f7b628;
+  --primary : #091545fa;
+  --dark : #000000f0;
+  --heavy : 600;
+  --ex-heavy : 900;
+  --poppins : 'Poppins';
+  --open-sans : "Open Sans";
+  --thin : 400;
+  --secondary : #00000089;
+  --md : 500;
+  --fd-black : rgba(0,0,0,0.8);
+}
+html,body{
+  padding : 0;
+  margin :0;
+}
+body{
+  height:auto;
+  width : auto;
+  scroll-behavior: smooth;
+  transition : 0.5s ease;
+}
+.hero-section{
+  position: relative;
+  height :100vh;
+  background-image: url('./images/bkimage.jpg');
+  background-size : cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ padding: 10px;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+   gap : 10px;
+   color: var(--main);
+}
+.hero-image{
+  height:150px;
+  width: 150px;
+  object-fit: contain;
+  
+}
+.overlay h1{
+  color :var(--main);
+  text-align: center;
+  text-transform: uppercase;
+  /* padding: 3px; */
+  font-family: var(--open-sans);
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+  font-weight:var(--ex-heavy);
+}
+.overlay p{
+  font-family: var(--poppins);
+  padding: 10px;
+  word-spacing: 2px;
+  text-align: center;
+  font-weight :var(--thin);
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.overlay p:last-child{
+  color: var(--accent);
+  /* background-color: var(--accent); */
+  padding: 10px;
+  border-radius:10px;
+  font-size : 1.5rem;
+}
+.join{
+  border-radius :10px;
+  background-color: rgba(0,0,0,0.8);
+  border-bottom : 10px;
+  
+}
+.bi-arrow-down{
+  border:2px solid var(--main);
+  padding: 5px;
+  border-radius :50%;
+  animation: bounce 0.5s alternate infinite;
+  margin-top:80px;
+}
+
+@keyframes bounce{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+#programs{
+  background-color: var(--main);
+  height:auto;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--open-sans);
+ justify-content: space-between;
+  align-items: center; 
+  padding-block-end: 20px;
+  
+}
+.bi-broadcast-pin{
+  color:black;
+}
+.program{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  opacity :0;
+  transition: transform 0.8s ease;
+  transform:translateY(150px)
+   /* Start with translateY to create a slide effect */
+}
+.visible{
+    opacity:1;
+    transform: translateY(0);
+}
+.program:nth-child(2){
+    margin-block-start: 30px;
+}
+.program:nth-child(3){
+    margin-block-start: 30px;
+}
+.program p{
+  color: var(--dark);
+  word-spacing: 2px;
+  line-height: 1.8;
+  text-align: center;
+  font-weight:var(--md);
+}
+.program h3{
+  font-weight: var(--thin);
+  font-family: var(--open-sans);
+}
+.bi-arrow-right-circle-fill{
+    color : var(--primary);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height:auto;
+    width: auto;
+    padding-block: 5px;
+    padding-inline: 15px;
+    gap: 0;
+    
+}
+.sermon{
+    display :grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    padding-inline:10px ;
+    color: var(--dark);
+    /* background-color: var(--fd-black); */
+    border-radius: 5px;
+    opacity: 0; /* Start with opacity 0 for initial fade-in effect */
+  transform: translateY(20px); /* Start with translateY to create a slide effect */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transitions for opacity and transform */
+  margin: 5px;
+}
+.sermon div p{
+    font-family: var(--open-sans);
+    font-size: 0.8rem;
+    
+}
+.sermon div p:nth-child(1){
+    font-weight: var(--ex-heavy);
+    letter-spacing: 1px;
+}
+
+.sermon.visible {
+  opacity: 1;
+  transform: translateY(0); /* Slide in by setting translateY to 0 */
+}
+
+/* Define animations for additional effects */
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.socials{
+    display: flex;
+    justify-content: space-evenly;
+    width: 150px;
+}
+footer{
+    height : auto;
+    width: 100vw;
+    background-color:var(--primary);
+    color:#808080;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--open-sans);
+    font-size: 100%;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    padding-inline: 10px;
+    padding-block: 10px;
+}
+li{
+    list-style-type: none;
+    font-size: 15px;
+    margin: 5px;
+}
+.socials svg{
+    margin :5px;
+}
+.footer{
+    opacity :0;
+    transition: opacity 0.7s ease;
+}
+.footer.visible{
+    opacity: 1;
+}
+.outreach{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    font-family: var(--poppins);
+    font-size: 1.8rem;
+    padding-inline: 20px;
+    padding-block: 20px;
+    height: auto;
+    width: auto;
+    padding: 0;
+    padding-inline: 20px;
+}
+.sam{
+    height:100px;
+    width: 100%;
+}
+.outreach span{
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: var(--ex-heavy);
+}
+.line{
+    height:5px;
+    width:100px;
+    background-color: var(--primary);
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    border-radius :20px;
+}
+.church-description{
+    font-family: var(--open-sans);
+    font-size: 1rem;
+    line-height : 1.9;
+    text-align: center;
+    word-spacing: 3px;
+    padding-inline:30px ;
+    font-weight: var(--thin);
+    color: var(--fd-black);
+}
